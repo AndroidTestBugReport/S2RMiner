@@ -1,0 +1,918 @@
+---FP---
+sent1:  When I click scan tag the app quits responding and crashes. #step #oracle
+
+sent2:  ####comment#12345#
+sent3:  I have tried this version and also azsde's forked version and I have the same issue.
+
+sent4:  ####comment#12345#
+sent5_target:  The error I am getting is here: http://pastebin.com/VL4LEzqL
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  ####comment#12345#
+sent3:  ####comment#12345#
+sent4:  ####comment#12345#
+sent5_target:  Superb, no longer crashes now.
+
+
+
+
+
+
+---FN---
+sent1:  #####title#12345#
+sent2:  #####title#12345#
+sent3:  #####title#12345#
+sent4:  #####title#12345#
+sent5_target:  Infinity / 100 km and plot deathlock #oracle
+
+
+
+
+
+
+---FN---
+sent1:  During multiple input of identical values e.g. 10 km (by day) and 10 litres some calculations fail. #step
+
+sent2:  ####comment#12345#
+sent3:  E.g. first calculates correcty 100 l/km but then next two results are "infinity l / 100 km. #step
+
+sent4:  ####comment#12345#
+sent5_target:  Plotting will death lock program then and you have to restart device. #oracle
+
+
+
+
+
+
+---FP---
+sent1:  numDot Disable `Automatically refresh` #step
+
+sent2:  // Build Label: Android/sdk_google_phone_x86/generic_x86:6.0/MASTER/4088240:userdebug/test-keys
+
+sent3:  // CRASH: app.librenews.io.librenews (pid 3284) (elapsed nanos: 702931492114)
+
+sent4:  // Long Msg: java.lang.NullPointerException: Attempt to invoke virtual method 'android.content.Context android.view.View.getContext()' on a null object reference
+
+sent5_target:  // Short Msg: java.lang.NullPointerException
+
+
+
+
+
+
+---FP---
+sent1:  // CRASH: app.librenews.io.librenews (pid 3284) (elapsed nanos: 702931492114)
+
+sent2:  // Build Changelist: 4088240
+
+sent3:  // Short Msg: java.lang.NullPointerException
+
+sent4:  // Build Label: Android/sdk_google_phone_x86/generic_x86:6.0/MASTER/4088240:userdebug/test-keys
+
+sent5_target:  // Long Msg: java.lang.NullPointerException: Attempt to invoke virtual method 'android.content.Context android.view.View.getContext()' on a null object reference
+
+
+
+
+
+
+---FN---
+sent1:  #### Import/Export settings is broken
+
+sent2:  numDot Fresh install Collect v1.14.0-beta.1 #step
+
+sent3:  First thing I noticed is that the QR code wasn't previewed.
+
+sent4:  #### Steps to reproduce the problem
+
+sent5_target:  Then for few minutes it then shows a popup message saying "ODK Collect has stopped." #oracle
+
+
+
+
+
+
+---FP---
+sent1:  I'm not currently able to reproduce the issue you're seeing with the two devices I've tried.
+
+sent2:  ####comment#12345#
+sent3:  Do you have ADB installed by any chance?
+
+sent4:  Any other info you can provide about the devices you're using, Android version, etc would be very helpful.
+
+sent5_target:  Could you run `adb logcat` from your command line and provide any crash logs you see there?
+
+
+
+
+
+
+---FP---
+sent1:  Thanks for that clarification, @abelcallejo, and very cool to hear you're using the QR code feature in this way!
+
+sent2:  ####comment#12345#
+sent3:  I've modified the issue title to better reflect what's going wrong.
+
+sent4:  ####comment#12345#
+sent5_target:  Could you please attach an example QR code that causes this crash?
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  Caused by: java.lang.ClassCastException: java.lang.Boolean cannot be cast to java.lang.String
+
+sent3:  Thank you!
+
+sent4:  Looks like the type of the password ends up wrong:
+
+sent5_target:  The settings are loaded fine but then there's a crash when they're actually used which means Collect can then never be launched!
+
+
+
+
+
+
+---FP---
+sent1:  The settings are loaded fine but then there's a crash when they're actually used which means Collect can then never be launched!
+
+sent2:  at org.odk.collect.android.preferences.GeneralSharedPreferences.get(GeneralSharedPreferences.java:56)
+
+sent3:  Looks like the type of the password ends up wrong:
+
+sent4:  at android.app.SharedPreferencesImpl.getString(SharedPreferencesImpl.java:223)
+
+sent5_target:  Caused by: java.lang.ClassCastException: java.lang.Boolean cannot be cast to java.lang.String
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  The user is then in a state where they can change the Server preferences or reimport to fix the problem.
+
+sent3:  Sorry that description is a little confusing!
+
+sent4:  After actually playing around with it (in `6827bbb`) it seems that the absolute simplest fix (for if the user us already in the broken state not for preventing them getting there) is showing Toast and then just letting the Server settings Fragment load with default values.
+
+sent5_target:  I meant that it would show an error to the user when the user visits General Settings > Server and the preferences are "corrupt" (there is an exception when calling `addPreferencesFromResource`). #step
+
+
+
+
+
+
+---FP---
+sent1:  Failing when the QR code is scanned is the best place to catch this.
+
+sent2:  ####comment#12345#
+sent3:  A question: are we worried about people already being stuck in this scenario?
+
+sent4:  ####comment#12345#
+sent5_target:  I'd thought also showing an error on settings made sense to try and help them to get out of a broken state (they've already scanned a broken QR) but if that isn't a scenario that makes sense then I can not bother with it.
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  ####comment#12345#
+sent3:  ####comment#12345#
+sent4:  ####comment#12345#
+sent5_target:  The paint crash was fixed in commit `e328ca8` and `dfb9508` #crash
+
+
+
+
+
+
+---FN---
+sent1:  ####comment#12345#
+sent2:  ####comment#12345#
+sent3:  Seems like a similar permissions issue to the crash when emailing apkgs that I recently fixed #oracle
+
+sent4:  Item.getUri()
+
+sent5_target:  android.os.FileUriExposedException: file:///storage/emulated/0/Pictures/img_201702162214361518016482.jpg exposed beyond app through ClipData.  #oracle
+
+
+
+
+
+
+---FP---
+sent1:  E/AndroidRuntime: FATAL EXCEPTION: main ? #oracle
+
+sent2:  E/AndroidRuntime: at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2201) ?
+
+sent3:  E/AndroidRuntime: Process: de.luhmer.owncloudnewsreader, PID: 22967 ?
+
+sent4:  SettingsActivity}: android.view.InflateException: Binary XML file line #33: Error inflating class java.lang.reflect.Constructor ?
+
+sent5_target:  E/AndroidRuntime: java.lang.RuntimeException: Unable to start activity ComponentInfo{de.luhmer.owncloudnewsreader/de.luhmer.owncloudnewsreader.
+
+
+
+
+
+
+---FP---
+sent1:  E/AndroidRuntime: Process: de.luhmer.owncloudnewsreader, PID: 22967 ?
+
+sent2:  E/AndroidRuntime: at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2250) ?
+
+sent3:  E/AndroidRuntime: java.lang.RuntimeException: Unable to start activity ComponentInfo{de.luhmer.owncloudnewsreader/de.luhmer.owncloudnewsreader.
+
+sent4:  E/AndroidRuntime: at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2201) ?
+
+sent5_target:  SettingsActivity}: android.view.InflateException: Binary XML file line #33: Error inflating class java.lang.reflect.Constructor ?
+
+
+
+
+
+
+---FP---
+sent1:  What is the expected output?
+
+sent2:  On what operating system?
+
+sent3:  What do you see instead?
+
+sent4:  What version of the product are you using?
+
+sent5_target:  Black screen, unresponsive
+
+
+
+
+
+
+---FP---
+sent1:  Change the server. #step
+
+sent2:   numDot * Operating system: Android Nought(7)
+
+sent3:  Now press the refresh button. #step
+
+sent4:   numDot * Browser: Libre News
+
+sent5_target:  The app crashes.
+
+
+
+
+
+
+---FN---
+sent1:  ####comment#12345#
+sent2:  // Long Msg: java.lang.IllegalArgumentException: unexpected url: x214w22k71g60836m2mfwk0x2cec #oracle
+
+sent3:  ####comment#12345#
+sent4:  // Short Msg: java.lang.IllegalArgumentException #oracle
+
+sent5_target:  // CRASH: com.newsblur (pid 31388) (elapsed nanos: 4054557181116) #oracle
+
+
+
+
+
+
+---FP---
+sent1:  // 	at android.os.AsyncTask$3.done(AsyncTask.java:309)
+
+sent2:  // 	at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:234)
+
+sent3:  // 	at java.util.concurrent.FutureTask.finishCompletion(FutureTask.java:354)
+
+sent4:  // 	at java.util.concurrent.FutureTask.run(FutureTask.java:242)
+
+sent5_target:  // 	at java.util.concurrent.FutureTask.setException(FutureTask.java:223)
+
+
+
+
+
+
+---FN---
+sent1:  #####title#12345#
+sent2:  #####title#12345#
+sent3:  #####title#12345#
+sent4:  #####title#12345#
+sent5_target:  App stops after opening "about" twice #wtep #oracle
+
+
+
+
+
+
+---FP---
+sent1:  Probably some other issue?
+
+sent2:  If your source of install is other than play, you wont get that dialog.
+
+sent3:  May be reinstall and try again?
+
+sent4:  Play services monitor the app installed from play and asks the user to send a error report to the developer's play console if the app crashes. #oracle
+
+sent5_target:  For the "send error report", its not by the app itself but by the Google Play Services.
+
+
+
+
+
+
+---FP---
+sent1:  On what operating system?
+
+sent2:  The reason seems to be that, since the game was deleted, the "game" variable is null at line 333 of src/cz/romario/opensudoku/gui/SudokuListActivity.java, so it caused a NullPointerException.
+
+sent3:  Crash on Nexus 4, OpenSudoku version 1.1.5, Android 4.2 #oracle
+
+sent4:  SudokuListActivity}: java.lang.NullPointerException E/AndroidRuntime( 6623): at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2180) E/AndroidRuntime( 6623): at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2230) E/AndroidRuntime( 6623): at android.app.ActivityThread.handleRelaunchActivity(ActivityThread.java:3692) E/AndroidRuntime( 6623): at android.app.ActivityThread.access$700(ActivityThread.java:141) E/AndroidRuntime( 6623): at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1240) E/AndroidRuntime( 6623): at android.os.Handler.dispatchMessage(Handler.java:99) E/AndroidRuntime( 6623): at android.os.Looper.loop(Looper.java:137) E/AndroidRuntime( 6623): at android.app.ActivityThread.main(ActivityThread.java:5041) E/AndroidRuntime( 6623): at java.lang.reflect.Method.invokeNative(Native Method) E/AndroidRuntime( 6623): at java.lang.reflect.Method.invoke(Method.java:511) E/AndroidRuntime( 6623): at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:793) E/AndroidRuntime( 6623): at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:560) E/AndroidRuntime( 6623): at dalvik.system.NativeStart.main(Native Method) E/AndroidRuntime( 6623): Caused by: java.lang.NullPointerException E/AndroidRuntime( 6623): at cz.romario.opensudoku.gui.SudokuListActivity.onPrepareDialog(SudokuListActivity.java:333) E/AndroidRuntime( 6623): at android.app.Activity.onPrepareDialog(Activity.java:3007) E/AndroidRuntime( 6623): at android.app.Activity.restoreManagedDialogs(Activity.java:968) E/AndroidRuntime( 6623): at android.app.Activity.performRestoreInstanceState(Activity.java:911) E/AndroidRuntime( 6623): at android.app.Instrumentation.callActivityOnRestoreInstanceState(Instrumentation.java:1131) E/AndroidRuntime( 6623): at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2158) E/AndroidRuntime( 6623): ... 12 more W/ActivityManager( 517): Force finishing activity cz.romario.opensudoku/.gui.SudokuListActivity
+
+sent5_target:  Stack trace: E/AndroidRuntime( 6623): FATAL EXCEPTION: main E/AndroidRuntime( 6623): java.lang.RuntimeException: Unable to start activity ComponentInfo{cz.romario.opensudoku/cz.romario.opensudoku.gui.
+
+
+
+
+
+
+---FP---
+sent1:  Crash on Nexus 4, OpenSudoku version 1.1.5, Android 4.2 #oracle
+
+sent2:  Please check this condition and fix it. #oracle
+
+sent3:  Stack trace: E/AndroidRuntime( 6623): FATAL EXCEPTION: main E/AndroidRuntime( 6623): java.lang.RuntimeException: Unable to start activity ComponentInfo{cz.romario.opensudoku/cz.romario.opensudoku.gui.
+
+sent4:  The reason seems to be that, since the game was deleted, the "game" variable is null at line 333 of src/cz/romario/opensudoku/gui/SudokuListActivity.java, so it caused a NullPointerException.
+
+sent5_target:  SudokuListActivity}: java.lang.NullPointerException E/AndroidRuntime( 6623): at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2180) E/AndroidRuntime( 6623): at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2230) E/AndroidRuntime( 6623): at android.app.ActivityThread.handleRelaunchActivity(ActivityThread.java:3692) E/AndroidRuntime( 6623): at android.app.ActivityThread.access$700(ActivityThread.java:141) E/AndroidRuntime( 6623): at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1240) E/AndroidRuntime( 6623): at android.os.Handler.dispatchMessage(Handler.java:99) E/AndroidRuntime( 6623): at android.os.Looper.loop(Looper.java:137) E/AndroidRuntime( 6623): at android.app.ActivityThread.main(ActivityThread.java:5041) E/AndroidRuntime( 6623): at java.lang.reflect.Method.invokeNative(Native Method) E/AndroidRuntime( 6623): at java.lang.reflect.Method.invoke(Method.java:511) E/AndroidRuntime( 6623): at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:793) E/AndroidRuntime( 6623): at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:560) E/AndroidRuntime( 6623): at dalvik.system.NativeStart.main(Native Method) E/AndroidRuntime( 6623): Caused by: java.lang.NullPointerException E/AndroidRuntime( 6623): at cz.romario.opensudoku.gui.SudokuListActivity.onPrepareDialog(SudokuListActivity.java:333) E/AndroidRuntime( 6623): at android.app.Activity.onPrepareDialog(Activity.java:3007) E/AndroidRuntime( 6623): at android.app.Activity.restoreManagedDialogs(Activity.java:968) E/AndroidRuntime( 6623): at android.app.Activity.performRestoreInstanceState(Activity.java:911) E/AndroidRuntime( 6623): at android.app.Instrumentation.callActivityOnRestoreInstanceState(Instrumentation.java:1131) E/AndroidRuntime( 6623): at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2158) E/AndroidRuntime( 6623): ... 12 more W/ActivityManager( 517): Force finishing activity cz.romario.opensudoku/.gui.SudokuListActivity
+
+
+
+
+
+
+---FP---
+sent1:  Stack trace: E/AndroidRuntime( 6623): FATAL EXCEPTION: main E/AndroidRuntime( 6623): java.lang.RuntimeException: Unable to start activity ComponentInfo{cz.romario.opensudoku/cz.romario.opensudoku.gui.
+
+sent2:  ####comment#12345#
+sent3:  SudokuListActivity}: java.lang.NullPointerException E/AndroidRuntime( 6623): at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2180) E/AndroidRuntime( 6623): at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2230) E/AndroidRuntime( 6623): at android.app.ActivityThread.handleRelaunchActivity(ActivityThread.java:3692) E/AndroidRuntime( 6623): at android.app.ActivityThread.access$700(ActivityThread.java:141) E/AndroidRuntime( 6623): at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1240) E/AndroidRuntime( 6623): at android.os.Handler.dispatchMessage(Handler.java:99) E/AndroidRuntime( 6623): at android.os.Looper.loop(Looper.java:137) E/AndroidRuntime( 6623): at android.app.ActivityThread.main(ActivityThread.java:5041) E/AndroidRuntime( 6623): at java.lang.reflect.Method.invokeNative(Native Method) E/AndroidRuntime( 6623): at java.lang.reflect.Method.invoke(Method.java:511) E/AndroidRuntime( 6623): at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:793) E/AndroidRuntime( 6623): at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:560) E/AndroidRuntime( 6623): at dalvik.system.NativeStart.main(Native Method) E/AndroidRuntime( 6623): Caused by: java.lang.NullPointerException E/AndroidRuntime( 6623): at cz.romario.opensudoku.gui.SudokuListActivity.onPrepareDialog(SudokuListActivity.java:333) E/AndroidRuntime( 6623): at android.app.Activity.onPrepareDialog(Activity.java:3007) E/AndroidRuntime( 6623): at android.app.Activity.restoreManagedDialogs(Activity.java:968) E/AndroidRuntime( 6623): at android.app.Activity.performRestoreInstanceState(Activity.java:911) E/AndroidRuntime( 6623): at android.app.Instrumentation.callActivityOnRestoreInstanceState(Instrumentation.java:1131) E/AndroidRuntime( 6623): at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2158) E/AndroidRuntime( 6623): ... 12 more W/ActivityManager( 517): Force finishing activity cz.romario.opensudoku/.gui.SudokuListActivity
+
+sent4:  Please check this condition and fix it. #oracle
+
+sent5_target:  The reason seems to be that, since the game was deleted, the "game" variable is null at line 333 of src/cz/romario/opensudoku/gui/SudokuListActivity.java, so it caused a NullPointerException.
+
+
+
+
+
+
+---FN---
+sent1:  SudokuListActivity}: java.lang.NullPointerException E/AndroidRuntime( 6623): at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2180) E/AndroidRuntime( 6623): at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2230) E/AndroidRuntime( 6623): at android.app.ActivityThread.handleRelaunchActivity(ActivityThread.java:3692) E/AndroidRuntime( 6623): at android.app.ActivityThread.access$700(ActivityThread.java:141) E/AndroidRuntime( 6623): at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1240) E/AndroidRuntime( 6623): at android.os.Handler.dispatchMessage(Handler.java:99) E/AndroidRuntime( 6623): at android.os.Looper.loop(Looper.java:137) E/AndroidRuntime( 6623): at android.app.ActivityThread.main(ActivityThread.java:5041) E/AndroidRuntime( 6623): at java.lang.reflect.Method.invokeNative(Native Method) E/AndroidRuntime( 6623): at java.lang.reflect.Method.invoke(Method.java:511) E/AndroidRuntime( 6623): at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:793) E/AndroidRuntime( 6623): at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:560) E/AndroidRuntime( 6623): at dalvik.system.NativeStart.main(Native Method) E/AndroidRuntime( 6623): Caused by: java.lang.NullPointerException E/AndroidRuntime( 6623): at cz.romario.opensudoku.gui.SudokuListActivity.onPrepareDialog(SudokuListActivity.java:333) E/AndroidRuntime( 6623): at android.app.Activity.onPrepareDialog(Activity.java:3007) E/AndroidRuntime( 6623): at android.app.Activity.restoreManagedDialogs(Activity.java:968) E/AndroidRuntime( 6623): at android.app.Activity.performRestoreInstanceState(Activity.java:911) E/AndroidRuntime( 6623): at android.app.Instrumentation.callActivityOnRestoreInstanceState(Instrumentation.java:1131) E/AndroidRuntime( 6623): at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2158) E/AndroidRuntime( 6623): ... 12 more W/ActivityManager( 517): Force finishing activity cz.romario.opensudoku/.gui.SudokuListActivity
+
+sent2:  ####comment#12345#
+sent3:  The reason seems to be that, since the game was deleted, the "game" variable is null at line 333 of src/cz/romario/opensudoku/gui/SudokuListActivity.java, so it caused a NullPointerException.
+
+sent4:  ####comment#12345#
+sent5_target:  Please check this condition and fix it. #oracle
+
+
+
+
+
+
+---FP---
+sent1:  11-01 14:56:58.360 12058 12058 W System.err:    at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+
+sent2:  // Build Label: Android/sdk_google_phone_x86/generic_x86:6.0/MASTER/4088240:userdebug/test-keys
+
+sent3:  // CRASH: app.librenews.io.librenews (pid 3182) (elapsed nanos: 493838390542)
+
+sent4:  // Long Msg: java.lang.ArrayIndexOutOfBoundsException: length=0; index=0
+
+sent5_target:  // Short Msg: java.lang.ArrayIndexOutOfBoundsException
+
+
+
+
+
+
+---FP---
+sent1:  // CRASH: app.librenews.io.librenews (pid 3182) (elapsed nanos: 493838390542)
+
+sent2:  // Build Changelist: 4088240
+
+sent3:  // Short Msg: java.lang.ArrayIndexOutOfBoundsException
+
+sent4:  // Build Label: Android/sdk_google_phone_x86/generic_x86:6.0/MASTER/4088240:userdebug/test-keys
+
+sent5_target:  // Long Msg: java.lang.ArrayIndexOutOfBoundsException: length=0; index=0
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  ####comment#12345#
+sent3:  ####comment#12345#
+sent4:  ####comment#12345#
+sent5_target:  9 beta 4 The program crashes every time Im going Misc - DB default settings #step
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  ####comment#12345#
+sent3:  I confirm.
+
+sent4:  ####comment#12345#
+sent5_target:  No more crashes.
+
+
+
+
+
+
+---FN---
+sent1:  ####comment#12345#
+sent2:  App crash because of missing UUID #wtep #oracle
+
+sent3:  ### Expected behavior
+
+sent4:  ### Actual behavior
+
+sent5_target:  SMS and list entry gets deleted #wtep #oracle
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  ####comment#12345#
+sent3:  ####comment#12345#
+sent4:  say "111111111111" #step
+
+sent5_target:  set foresight period value as any 11 digit number crashed the application #step
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  ####comment#12345#
+sent3:  ####comment#12345#
+sent4:  If not then we need a debug log &/or much more detailed reproduction steps - it doesn't seem to be reproducible just by doing a simple search.
+
+sent5_target:  If you reported the crash via the reporter (which should have appeared if you installed the app via Google Play) then we should get a proper crash report and we'll get to it.
+
+
+
+
+
+
+---FP---
+sent1:  Il 08 gennaio 2017 23:07:49 CET, Philip <notifications@github.com> ha scritto:
+
+sent2:  You are receiving this because you authored the thread.
+
+sent3:  
+
+sent4:  If not then we need a debug log / more detailed reproduction steps - it doesn't seem to be reproducible just by doing a simple search. \--
+
+sent5_target:  If you reported the crash via the reporter (which should have appeared if you installed the app via Google Play) then we should get a proper crash report and we'll get to it.
+
+
+
+
+
+
+---FP---
+sent1:  #####title#12345#
+sent2:  #####title#12345#
+sent3:  #####title#12345#
+sent4:  #####title#12345#
+sent5_target:  Multiple force closes on database requests
+
+
+
+
+
+
+---FN---
+sent1:  03-21 20:28:51.889 28125 28125 D AIMSICD : StatusWatcher received status change to OK, updating icon
+
+sent2:  SecUpwN.AIMSICD, PID: 28125
+
+sent3:  03-21 20:28:51.926 28125 28125 D AndroidRuntime: Shutting down VM
+
+sent4:  03-21 20:28:51.929 28125 28125 E AndroidRuntime: Process: com.
+
+sent5_target:  03-21 20:28:51.929 28125 28125 E AndroidRuntime: FATAL EXCEPTION: main #oracle
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  ####comment#12345#
+sent3:  ####comment#12345#
+sent4:  ####comment#12345#
+sent5_target:  Reverting #812 fixes the issue, but I need to find another way to fix this....
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  We renamed the java packages to adhere to the java naming conventions in order to make our follow common coding practices to ease up the life of developers.
+
+sent3:  ####comment#12345#
+sent4:  @mimi89999, please refork our project and do not revert #812.
+
+sent5_target:  > Reverting #812 fixes the issue, but I need to find another way to fix this....
+
+
+
+
+
+
+---FP---
+sent1:  v0.1.41-alpha compiled from source 30.03.16 22:00
+
+sent2:  "add new strings": Works "Solved".
+
+sent3:  From the main (top) border right side menu I go to preferences.
+
+sent4:  AIMSICD keeps running in the background.
+
+sent5_target:  Then I Ask for OpenCell API Key : AIMSICD still "force-close"
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  OpenCellIdActivity}; have you declared this activity in your AndroidManifest.xml?
+
+sent3:  The error: #oracle
+
+sent4:  SecUpwN.AIMSICD/com.secupwn.aimsicd.activities.
+
+sent5_target:  > 03-31 16:13:02.783 5686 5686 E AndroidRuntime: android.content.ActivityNotFoundException: Unable to find explicit activity class {com.
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  The app crashes when trying to download OpenCellId data if device is in airplane mode with Wi-Fi enabled. #step #oracle
+
+sent3:  ####comment#12345#
+sent4:  I found another problem (the logcat above).
+
+sent5_target:  @Nordlenning Could you post log of this error because I can't reporduce it.
+
+
+
+
+
+
+---FP---
+sent1:  If I can get hold of any log yes, but AIMSICD freezes so i cant get it. #oracle
+
+sent2:  The app crashes when trying to download OpenCellId data if device is in airplane mode with Wi-Fi enabled." #step #oracle
+
+sent3:  Or can I ?
+
+sent4:  "I found another problem (the logcat above).
+
+sent5_target:  Uploading Picture of the event, I can repeatedly reproduce this error.
+
+
+
+
+
+
+---FP---
+sent1:  There should not be a share button in this view.
+
+sent2:  ####comment#12345#
+sent3:  #### Debug output
+
+sent4:  ####comment#12345#
+sent5_target:  Each crash is for each option, in order: https://gist.github.com/licaon-kter/1f55795ffd5e18fb06e9d5fdfd03d59c
+
+
+
+
+
+
+---FP---
+sent1:  (All messages and texts are in german on my device; I don't know the texts if you use K9 in english.
+
+sent2:  numDot Open K-9 Mail #step
+
+sent3:  I just tried to translate them)
+
+sent4:  ### Steps to reproduce
+
+sent5_target:  If I try to add a new email account to K9-Mail (Enter email and password) and tap on one of the two buttons ("Manually" or "Continue") the app will crash with only the message "K-9 Mail has stopped"
+
+
+
+
+
+
+---FP---
+sent1:  K-9 Mail version: 5.403
+
+sent2:  ####comment#12345#
+sent3:  Android version: 6.0.1
+
+sent4:  ####comment#12345#
+sent5_target:  Account type (IMAP, POP3, WebDAV/Exchange): I WANT to use IMAP, but I haven't tried yet, because of the crash.
+
+
+
+
+
+
+---FP---
+sent1:  I suspect Thunderbird is lack of validation not choice to support this.
+
+sent2:  ####comment#12345#
+sent3:  So it's not a feature to have parity with, more exploitation of a design flaw.
+
+sent4:  ####comment#12345#
+sent5_target:  But we shouldn't crash.
+
+
+
+
+
+
+---FN---
+sent1:  #####title#12345#
+sent2:  #####title#12345#
+sent3:  #####title#12345#
+sent4:  #####title#12345#
+sent5_target:  StringIndexOutOfBoundsException tipying only the "space" #step #oracle
+
+
+
+
+
+
+---FP---
+sent1:  E/AndroidRuntime( 727): at android.os.AsyncTask$3.done(AsyncTask.java:299)
+
+sent2:  E/AndroidRuntime( 727): at java.util.concurrent.FutureTask.run(FutureTask.java:137)
+
+sent3:  E/AndroidRuntime( 727): at java.util.concurrent.FutureTask$Sync.innerSetException(FutureTask.java:273)
+
+sent4:  E/AndroidRuntime( 727): at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:307)
+
+sent5_target:  E/AndroidRuntime( 727): at java.util.concurrent.FutureTask.setException(FutureTask.java:124)
+
+
+
+
+
+
+---FN---
+sent1:  ####comment#12345#
+sent2:  ####comment#12345#
+sent3:  ####comment#12345#
+sent4:  ####comment#12345#
+sent5_target:  hey i have a problem and that is after building project when i try to edit the saved video, app crashesh on multiple devices (m above) #step #oracle
+
+
+
+
+
+
+---FN---
+sent1:  #####title#12345#
+sent2:  #####title#12345#
+sent3:  #####title#12345#
+sent4:  #####title#12345#
+sent5_target:  Every 2nd Stop Live Data crash #wtep #oracle
+
+
+
+
+
+
+---FN---
+sent1:  I get a crash every 2nd time (Start Live Data -> Stop Live Data -> Start Live Data -> Stop Live Data). #step #oracle
+
+sent2:  06-16 15:10:35.019: E/AndroidRuntime(5038): at android.app.ContextImpl.unbindService(ContextImpl.java:1761)
+
+sent3:  06-16 15:10:35.019: E/AndroidRuntime(5038): FATAL EXCEPTION: main #oracle
+
+sent4:  06-16 15:10:35.019: E/AndroidRuntime(5038): at android.app.LoadedApk.forgetServiceDispatcher(LoadedApk.java:926)
+
+sent5_target:  06-16 15:10:35.019: E/AndroidRuntime(5038): java.lang.IllegalArgumentException: Service not registered: pt.lighthouselabs.obd.reader.activity.MainActivity$3@41d9e930 #oracle
+
+
+
+
+
+
+---FP---
+sent1:  #### Actual behaviour
+
+sent2:  To reproduce the bug follow the following steps :-
+
+sent3:  While selecting birth date from date picker, the date picker showing me 30 Feb 2018 as a date. #wtep
+
+sent4:  #### How to reproduce
+
+sent5_target:  When i set 30 Feb 2018 as birthday of contact, the app got crashed. #wtep
+
+
+
+
+
+
+---FP---
+sent1:   numDot * Create a new contact from app. #step
+
+sent2:  * Device:  Samsung J7 Prime
+
+sent3:   numDot * Click on birthday field and set 30 Feb 2018 as birthday date. #step
+
+sent4:   numDot * For better understanding see recording of bug. #step
+
+sent5_target:   numDot * App crashed immediately. #step
+
+
+
+
+
+
+---FP---
+sent1:  Collect should not crash. #oracle
+
+sent2:  ####comment#12345#
+sent3:  #### Other information
+
+sent4:  Screenshot of behavior attached.
+
+sent5_target:  It doesnt't matter if items from the checklist ale selected or not, the same error occurs.
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  numDot click menu #step
+
+sent3:  ####comment#12345#
+sent4:  numDot start the app #step
+
+sent5_target:  Crash on Nexus 4, ACV 1.4.1.4:
+
+
+
+
+
+
+---FP---
+sent1:  ## Crash #oracle
+
+sent2:  ...
+
+sent3:  The following crash occurs on devices running API 22 (Lollipop 5.1) and below. #oracle
+
+sent4:  at com.vestrel00.daggerbutterknifemvp.ui.main.view.MainFragment.onExample1Clicked(MainFragment.java:63) #oracle
+
+sent5_target:  java.lang.NullPointerException: Attempt to invoke interface method 'void com.vestrel00.daggerbutterknifemvp.ui.main.view.MainFragmentListener.onExample1Clicked()' on a null object reference
+
+
+
+
+
+
+---FN---
+sent1:  The following crash occurs on devices running API 22 (Lollipop 5.1) and below. #oracle
+
+sent2:  The crash does not occur for API 23 (Marshmallow 6.0) and above. #oracle
+
+sent3:  java.lang.NullPointerException: Attempt to invoke interface method 'void com.vestrel00.daggerbutterknifemvp.ui.main.view.MainFragmentListener.onExample1Clicked()' on a null object reference
+
+sent4:  ...
+
+sent5_target:  at com.vestrel00.daggerbutterknifemvp.ui.main.view.MainFragment.onExample1Clicked(MainFragment.java:63) #oracle
+
+
+
+
+
+
+---FP---
+sent1:  //  at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:726)
+
+sent2:  //  at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:1430)
+
+sent3:  //  at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:616)
+
+sent4:  //  at net.gsantner.opoc.ui.FilesystemDialog.onViewCreated(FilesystemDialog.java:128)
+
+sent5_target:  // Caused by: java.lang.NullPointerException: Attempt to read from field 'boolean net.gsantner.opoc.ui.FilesystemDialogData$Options.cancelButtonEnable' on a null object reference
+
+
+
+
+
+
+---FP---
+sent1:  Moto G4 Android 7.0
+
+sent2:  ####comment#12345#
+sent3:  Screenshots:
+
+sent4:  ####comment#12345#
+sent5_target:  Crash log:
+
+
+
+
+
+
+---FP---
+sent1:  ####comment#12345#
+sent2:  On Tue, Aug 1, 2017 at 9:39 PM, MAYANK JINDAL ***@***.***> wrote: *Summary:* App is crashing if we want to change photo of client *Steps to reproduce:* Go to client detail activity. #wtep #oracle
+
+sent3:  ####comment#12345#
+sent4:  
+
+sent5_target:  Mayank, Please add Crash log in comment
+
+
+
+
+
+
+---FP---
+sent1:  E/AndroidRuntime( 727): at android.os.AsyncTask$3.done(AsyncTask.java:299)
+
+sent2:  E/AndroidRuntime( 727): at java.util.concurrent.FutureTask.run(FutureTask.java:137)
+
+sent3:  E/AndroidRuntime( 727): at java.util.concurrent.FutureTask$Sync.innerSetException(FutureTask.java:273)
+
+sent4:  E/AndroidRuntime( 727): at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:307)
+
+sent5_target:  E/AndroidRuntime( 727): at java.util.concurrent.FutureTask.setException(FutureTask.java:124)
+
+
+
+
+
+
+---FP---
+sent1:  E/AndroidRuntime( 727): at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:569)
+
+sent2:  E/AndroidRuntime( 727): at android.database.sqlite.SQLiteConnection.acquirePreparedStatement(SQLiteConnection.java:882)
+
+sent3:  E/AndroidRuntime( 727): at java.lang.Thread.run(Thread.java:856)
+
+sent4:  E/AndroidRuntime( 727): at android.database.sqlite.SQLiteConnection.nativePrepareStatement(Native Method)
+
+sent5_target:  E/AndroidRuntime( 727): Caused by: android.database.sqlite.SQLiteException: near "s": syntax error (code 1): , while compiling: SELECT word, _id FROM words_en WHERE stems LIKE '%slumdroid's test %' OR stems LIKE 'slumdroid's test' ORDER BY LENGTH(word) LIMIT 10
+
+

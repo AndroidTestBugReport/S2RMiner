@@ -1,0 +1,15 @@
+#####title#12345#
+Teams in the 7000s
+#####title#12345#
+Teams in the 7000s do not show up anywhere on the app. #step
+####comment#12345#
+I think Issue #706 is getting at this same bug.
+The new block of teams does show up in an event where they're registered, but you may have to force the app to reconstruct the Teams tabs strip to get a new block to appear in the Teams screen. #step
+Workaround: Try switching to the Events screen and back to Teams. #step
+Or switch to Events, switch to an older year, switch back, then switch back to Teams. #step
+####comment#12345#
+It looks like the teams are now showing up and this was fixed.
+However, when going to an event and then clicking on the team, the link doesn't seem to work. #step
+For example, the Las Vegas Regional page shows team 7183 on the list of teams, but clicking on it leads you to an empty page. #step
+If you search for team 7183 on the app, however, their page comes up. #step
+####comment#12345#
